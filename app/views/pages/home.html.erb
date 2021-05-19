@@ -1,0 +1,15 @@
+<h1>HELLO WORLD</h1>
+
+<% if !logged_in? %>
+    <% controller.redirect_to login_path %>
+<% else %>
+    <h2><%= current_user.username %></h2>
+    <%= link_to "Log out", logout_path, method: "delete" %><br><br>
+    <%= link_to "Invite Friend", email_url %><br><br>
+    <%= link_to "Show Users", show_url %><br><br>
+        
+        <% if current_user.role == 'friend' %>
+            <h2> WELCOME FRIEND </h2>
+        <%end%>
+<% end %>
+

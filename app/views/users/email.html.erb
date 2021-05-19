@@ -1,0 +1,9 @@
+<h1>Invite User</h1>
+
+<%= form_with(model: @user, local: true ) do |f| %>
+    <%= f.label :username %>
+    <%= f.text_field :username %><br>
+    <%= f.hidden_field :password, :value =>"password", readonly: true  %><br>
+    <%= f.hidden_field :role, :value =>"friend", readonly: true  %><br>
+    <%= f.submit %>
+<% end %>
